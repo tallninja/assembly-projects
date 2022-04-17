@@ -3,18 +3,18 @@
 ; Link (elf_i386 if in 64 bit system): ld -m elf_i386 lesson1.o -o lesson1
 ; Run: ./lesson1
 
-SECTION .data
+section .data
 
-msg	db	'Hello World !', 0Ah 
+msg	db	'Hello World !', 0Ah
 
-SECTION .text
+section .text
 
 global _start
 
 _start:
 
-	mov	edx, 14		; store the size of msg variable in register EDX
-	mov	ecx, msg	; store the pointer to msg in register ECX
-	mov	ebx, 1		; write to STDOUT
-	mov	eax, 4		; SYSCALL write
-	int	80h
+	mov		edx, 14		; store the size of msg variable in register EDX
+	mov		ecx, msg	; store the pointer to msg in register ECX
+	mov		ebx, 1		; write to STDOUT
+	mov		eax, 4		; SYSCALL write
+	int		80h
