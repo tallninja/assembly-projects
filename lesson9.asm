@@ -28,7 +28,8 @@ _start:
 	mov	ecx, sinput	; reserve space to store the input (buffer)
 	mov	ebx, 0		; read from STDIN
 	mov	eax, 3		; SYS_READ kernel opcode
-	int	80h
+	int	80h		; we need this in order to make the CPU wait for user input
+				; otherwise it will just continue with execution
 
 	mov	eax, msg2
 	call	print
